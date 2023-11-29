@@ -19,20 +19,23 @@
 
 #define MAX_CLASS 256
 
-typedef struct {
-    clib_bitmap_t *class_bitmap;
-    ring_buffer queue_map[MAX_CLASS];
+typedef struct
+{
+  clib_bitmap_t *class_bitmap;
+  ring_buffer queue_map[MAX_CLASS];
 } sch_rr_buffer_t;
 
-typedef struct {
-    int queue_i;
-    int pos;
+typedef struct
+{
+  int queue_i;
+  int pos;
 } trace_en_t;
 
-typedef struct {
-    int queue_i;
-    int pos;
-    int rem_pkt;
+typedef struct
+{
+  int queue_i;
+  int pos;
+  int rem_pkt;
 } trace_de_t;
 
 extern sch_rr_buffer_t *rr_buffer;
